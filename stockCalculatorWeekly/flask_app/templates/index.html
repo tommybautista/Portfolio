@@ -21,12 +21,39 @@
 
             </thead>
             <tbody>
+                <tr>
+                    <td class="scope"><input type="text" name="ticker" id=""></td>
+                    <td class="scope"><input type="number" name="buy_price" id="buy_price" oninput="minTargetPrice()"></td>
+                    <td class="scope" id="min_target_price"></td>
+                    <td class="scope"><input type="number" name="amount" id="amount" value="10"></td>
+                    <td class="scope" id="cost"></td>
+                    <td class="scope" id="potential_net"></td>
+                    <td class="scope"><input type="number" name="percent" id="percent" value="0.04" oninput="minTargetPrice()"></td>
+                </tr>
 
             </tbody>
         </table>
     
     </div>
 </div>
+
+<script>
+    function minTargetPrice(){
+        var buy_price = document.getElementById('buy_price').value;
+        var percent = document.getElementById('percent').value;
+        var amount = document.getElementById('amount').value;
+        var cost = document.getElementById('cost').innerHTML;
+        var goal = document.getElementById('min_target_price').innerHTML;
+        
+
+
+        document.getElementById('min_target_price').innerHTML = (buy_price*percent) + parseInt(buy_price);
+        document.getElementById('cost').innerHTML = buy_price*amount;
+        document.getElementById('potential_net').innerHTML = (parseInt(document.getElementById('min_target_price').innerHTML)*parseInt(document.getElementById('amount').value)) - (parseFloat(document.getElementById('cost').innerHTML)).toFixed(2);
+    }
+
+
+</script>
 
 
 {% endblock content %}
