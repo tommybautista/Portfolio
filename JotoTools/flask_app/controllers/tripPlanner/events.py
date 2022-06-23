@@ -6,7 +6,7 @@ from flask_app.models.tripPlanner.event import Event
 def add():
     if 'user_id' not in session:
         flash('***You must be logged in to add events!***', 'danger')
-        return redirect('/')
+        return redirect('/indexTripPlanner')
 
     data = {
         "date": request.form["date"],
