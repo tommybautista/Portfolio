@@ -9,7 +9,7 @@ bcrypt = Bcrypt(app)
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 class User:
-    db = "trip_planner2"
+    db = "jototools"
     def __init__(self, data):
         self.id = data['id']
         self.username = data['username']
