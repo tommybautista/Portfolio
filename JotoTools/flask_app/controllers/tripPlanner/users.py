@@ -5,6 +5,10 @@ from flask_app.models.tripPlanner.event import Event
 from flask_bcrypt import Bcrypt        
 bcrypt = Bcrypt(app)
 
+@app.route('/jototools')
+def jototools():
+    return redirect('/')
+
 @app.route('/indexTripPlanner')
 def indexTripPlanner():
     if 'user_id' in session:

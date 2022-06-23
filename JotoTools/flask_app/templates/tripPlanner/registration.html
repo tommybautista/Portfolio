@@ -2,9 +2,15 @@
 {% block header %}
 	{% if 'user_id' in session %}
 		<div>
+			<a href="/jototools" class="text-light" style="text-decoration: none; margin-right: 10px;">JotoTools</a>
+		</div>
+		<div>
 			<a href="/logout" class="text-light" style="text-decoration: none; margin-right: 10px;">Logout</a>
 		</div>
 	{% else %}
+		<div>
+			<a href="/jototools" class="text-light" style="text-decoration: none; margin-right: 10px;">JotoTools</a>
+		</div>
 		<div>
 			<a href="/login" class="text-light" style="text-decoration: none; margin-right: 10px;">Login</a>
 		</div>
